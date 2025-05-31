@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-input {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+}
+
+.text-display {
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.2;
+    transition: font-size 0.2s ease-out, transform 0.2s ease-out;
+    max-width: 95%;
+    max-height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    user-select: none;
+    cursor: text;
+}
+
+.text-content {
+    display: block;
+}
+
+.placeholder {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* Measurement helper - invisible element for calculating text dimensions */
+.text-measure {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.2;
+    font-family: inherit;
+    max-width: 95vw;
+}
