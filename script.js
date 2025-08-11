@@ -252,7 +252,20 @@ function toggleFullscreen() {
             document.msExitFullscreen();
         }
     }
+
+    lockLandscapeOrientation();
 }
+
+async function lockLandscapeOrientation() {
+    if ('screen' in window && 'orientation' in window.screen && 'lock' in window.screen.orientation) {
+        try {
+            await window.screen.orientation.lock('landscape');
+        } catch (error) {
+            console.log('Orientation lock failed:', error.message);
+        }
+    }
+}
+
 
 function handleFullscreenChange() {
     const isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement ||
